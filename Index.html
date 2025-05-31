@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cole and Caleb’s Currency Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .shop-info {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .item-list, .order-form {
+      margin-top: 20px;
+    }
+    .item {
+      margin: 8px 0;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="shop-info">
+    <h1>Cole and Caleb’s Currency Shop</h1>
+    <p><strong>Motto:</strong> Collect the Past. Own the Value.</p>
+    <p><strong>Location:</strong> School</p>
+    <p><strong>Contact:</strong> (805)-656-2387</p>
+  </div>
+
+  <div class="item-list">
+    <h2>Items for Sale</h2>
+    <div class="item">🔘 Coin Packs — $4–$6</div>
+    <div class="item">🪙 Rare Coins — $15–$40</div>
+    <div class="item">💵 Paper Currency — $3–$100+</div>
+    <div class="item">❓ Mystery Packs — $5–$20</div>
+    <div class="item">✨ Special Gold Coin — Price upon request</div>
+  </div>
+
+  <div class="order-form">
+    <h2>Place an Order</h2>
+    <form id="orderForm">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" required />
+
+      <label for="item">Select Item:</label>
+      <select id="item">
+        <option value="Coin Packs">Coin Packs</option>
+        <option value="Rare Coins">Rare Coins</option>
+        <option value="Paper Currency">Paper Currency</option>
+        <option value="Mystery Packs">Mystery Packs</option>
+        <option value="Special Gold Coin">Special Gold Coin</option>
+      </select>
+
+      <label for="notes">Notes or Questions:</label>
+      <textarea id="notes" rows="3"></textarea>
+
+      <button type="submit">Submit Order</button>
+    </form>
+    <p id="confirmation"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('customerName').value;
+      const item = document.getElementById('item').value;
+      const notes = document.getElementById('notes').value;
+      document.getElementById('confirmation').textContent =
+        `Thank you, ${name}! Your request for "${item}" has been received. We will contact you soon.`;
+      form.reset();
+    });
+  </script>
+</body>
+        </html>
